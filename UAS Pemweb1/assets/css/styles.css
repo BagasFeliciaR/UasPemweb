@@ -1,0 +1,540 @@
+/*=============== GOOGLE FONTS ===============*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+/*=============== Css ===============*/
+
+:root {
+    --header-height: 3.5rem;
+    /*========== Warna ==========*/
+    --first-color: hsl(140, 40%, 48%);
+    --first-color-alt: hsl(140, 40%, 44%);
+    --title-color: hsl(140, 4%, 12%);
+    --text-color: hsl(140, 4%, 40%);
+    --text-color-light: hsl(140, 4%, 64%);
+    --white-color: hsl(0, 0%, 100%);
+    --body-color: hsl(0, 0%, 100%);
+    --container-color: hsl(0, 0%, 95%);
+    --shadow-img: drop-shadow(0 8px 12px hsla(0, 0%, 0%, .2));
+    --filter-img: invert(1);
+    /*========== Font + Tipografi ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Poppins", sans-serif;
+    --second-font: "Cherry Bomb One", cursive;
+    --third-font: "Bubblegum Sans", cursive;
+    --biggest-font-size: 3rem;
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    /*========== Ketebalan Font ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+
+/*========== Responsif Tipografi ==========*/
+
+@media screen and (min-width: 1150px) {
+     :root {
+        --biggest-font-size: 5.5rem;
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+
+/*=============== Main ===============*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color .4s;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    line-height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*=============== Tema ===============*/
+
+
+/*========== Versi Tema Hitam ==========*/
+
+
+/*========== Perubahan Warna Versi Tema Hitam ==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 5rem 1rem;
+}
+
+.section__tittle {
+    font-size: var(--big-font-size);
+    font-family: var(--third-font);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.main {
+    overflow: hidden;
+    /* Animasi Scroll */
+}
+
+
+/*=============== HEADER & NAV ===============*/
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    padding-bottom: 20px;
+    transition: box-shadow .4s, background-color .4s;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--title-color);
+}
+
+.nav__logo {
+    width: 70px;
+    padding-top: 22px;
+    padding-left: 12px;
+    column-gap: .25rem;
+    font-family: var(--third-font);
+    font-weight: bold;
+    font-size: var(--h3-font-size);
+}
+
+.nav__toggle,
+.nav__close {
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding-top: 1rem;
+}
+
+
+/* Navigation user hp */
+
+@media screen and (max-width: 1150px) {
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        box-shadow: 0 2px 16px hsl(0, 0%, 0%, .1);
+        transition: top .4s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 1rem;
+    padding-bottom: 15px;
+    padding-top: 8px;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+
+.nav__img-1,
+.nav__img-2 {
+    position: absolute;
+    filter: var(--filter-img);
+}
+
+.nav__img-1 {
+    width: 150px;
+    top: -2.5rem;
+    left: -3.5rem;
+    rotate: 180deg;
+}
+
+.nav__img-2 {
+    width: 50px;
+    bottom: 0.2rem;
+    right: 2.5rem;
+}
+
+
+/* Show menu */
+
+.show-menu {
+    top: 0;
+}
+
+
+/* Add shadow header */
+
+.shadow-header {
+    box-shadow: 0 4px 12px hsl(0, 0%, 0%, .1);
+    background-color: var(--white-color);
+}
+
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+
+.home {
+    position: relative;
+}
+
+.home__container {
+    padding-top: 2.5rem;
+    row-gap: 2rem;
+}
+
+.home__data {
+    position: relative;
+    text-align: center;
+}
+
+.home__tittle {
+    font-size: var(--biggest-font-size);
+    font-family: var(--third-font);
+    margin-bottom: 1rem;
+}
+
+.home__description {
+    margin-bottom: 2rem;
+}
+
+.home__food,
+.home__branch {
+    filter: var(--filter-img);
+    position: absolute;
+}
+
+.home__food {
+    width: 40px;
+    top: 6.75rem;
+    left: 1rem;
+}
+
+.home__img {
+    width: 320px;
+    justify-self: center;
+    filter: var(--shadow-img);
+}
+
+.home__branch {
+    width: 120px;
+    right: -3rem;
+    bottom: 15rem;
+}
+
+
+/*=============== BUTTON ===============*/
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    border-radius: 4rem;
+    transition: box-shadow .4s;
+}
+
+.button:hover {
+    box-shadow: 0 8px 24px hsl(140, 40%, 48%, .6);
+}
+
+
+/*=============== ENJOY ===============*/
+
+.enjoy__container {
+    padding-top: 2rem;
+    grid-template-columns: 240px;
+    row-gap: 2rem;
+    justify-content: center;
+}
+
+.enjoy__card {
+    position: relative;
+    text-align: center;
+}
+
+
+/*=============== ABOUT ===============*/
+
+.about {
+    position: relative;
+}
+
+.about__container {
+    row-gap: 2rem;
+}
+
+.about__data {
+    position: relative;
+    text-align: center;
+}
+
+.about__description {
+    margin-bottom: 2rem;
+}
+
+.about__food,
+.about__branch {
+    filter: var(--filter-img);
+    position: absolute;
+}
+
+.about__food {
+    width: 40px;
+    bottom: 2rem;
+    right: 1rem;
+}
+
+.about__img {
+    width: 470px;
+    justify-self: center;
+    filter: var(--shadow-img);
+}
+
+.about__branch {
+    width: 120px;
+    rotate: 60deg;
+    left: -3.5rem;
+    bottom: 15rem
+}
+
+
+/*=============== POPULAR ===============*/
+
+.populer__container {
+    padding-top: 6rem;
+    grid-template-columns: 250px;
+    justify-content: center;
+    row-gap: 6rem;
+}
+
+.populer__card {
+    position: relative;
+    text-align: center;
+    padding-block: 6.25rem 3rem;
+}
+
+.populer__bg {
+    width: 100%;
+    height: 100%;
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: skewY(4deg);
+    transition: background-color .4s;
+}
+
+
+/*=============== JOIN ===============*/
+
+.join__container {
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.join__content {
+    position: relative;
+    padding: 2.5rem 1.5rem;
+    row-gap: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.join__content::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, .2);
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(8px);
+}
+
+.join__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.join__data,
+.join__form {
+    z-index: 5;
+}
+
+.join__data .section__tittle,
+.join__description {
+    color: var(--white-color);
+    text-align: center;
+}
+
+.join__form {
+    display: grid;
+    row-gap: 75rem;
+}
+
+.join__input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 4rem;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color .4s;
+}
+
+.join__input::placeholder {
+    color: var(--text-color);
+}
+
+.join__buttom {
+    cursor: pointer;
+}
+
+.join__leaf-1,
+.join__leaf-2 {
+    position: absolute;
+    width: 80px;
+}
+
+.join__leaf-1 {
+    top: -2.5rem;
+    left: .75rem;
+    rotate: 135deg;
+}
+
+.join__leaf-2 {
+    right: 1.5rem;
+    bottom: 1rem;
+    rotate: 15deg;
+}
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+
+
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
